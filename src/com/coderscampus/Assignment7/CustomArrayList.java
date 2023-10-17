@@ -16,6 +16,8 @@ public class CustomArrayList<T> implements CustomList<T> {
 	public boolean add(T item) {
 		checkCapacity(size + 1);
 		items[size++] = item;
+		// Test Comment: should_add_11_items_to_list()
+//		System.out.println(item);
 		return true;
 	}
 
@@ -40,6 +42,21 @@ public class CustomArrayList<T> implements CustomList<T> {
 			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
 		}
 		return (T) items[index];
+	}
+
+	@Override
+	public boolean add(int index, T item) throws IndexOutOfBoundsException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public T remove(int index) throws IndexOutOfBoundsException {
+		// NEEDS WORK
+		checkCapacity(size - 1);
+		items[size--] = index;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

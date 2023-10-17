@@ -18,6 +18,9 @@ public class CustomListApplication {
 		for (int i = 0; i < myCustomList.getSize(); i++) {
 			System.out.println(myCustomList.get(i));
 		}
+		
+//		myCustomList.remove();
+//		System.out.println( + " was removed");
 
 	}
 
