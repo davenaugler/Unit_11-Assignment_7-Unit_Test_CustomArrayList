@@ -11,7 +11,7 @@ public interface CustomList<T> {
 	 * item to the list) 
 	 *
 	 */
-	boolean add (T item);
+	boolean add (T item); // Trevor Method #1
 	
 	  /**
      * This method should add a new item into the <code>CustomList</code> at the
@@ -23,7 +23,7 @@ public interface CustomList<T> {
      * @return <code>true</code> when the item is added
      * @throws IndexOutOfBoundsException
      */
-    boolean add (int index, T item) throws IndexOutOfBoundsException;
+    boolean add (int index, T item) throws IndexOutOfBoundsException; // Trevor Method #2
 	
 	
 	
@@ -32,7 +32,7 @@ public interface CustomList<T> {
 	 * based on the number of actual elements stored inside of the <code>CustomList</code>
 	 * @return an <code>int</code> representing the number of elements stored in the <code>CustomList</code>
 	 */
-	int getSize();
+	int getSize(); // Trevor Method #3
 	
 	/**
      * This method will return the actual element from the <code>CustomList</code> based on the
@@ -41,7 +41,7 @@ public interface CustomList<T> {
      * @return The element that is stored inside of the <code>CustomList</code> at the given index
      * @throws IndexOutOfBoundsException
      */
-    T get(int index) throws IndexOutOfBoundsException;
+    T get(int index) throws IndexOutOfBoundsException; // Trevor Method #4
 	
     /**
      * This method should remove an item from the <code>CustomList</code> at the
@@ -51,6 +51,6 @@ public interface CustomList<T> {
      * @return the actual item that was removed from the list
      * @throws IndexOutOfBoundsException
      */
-    T remove(int index) throws IndexOutOfBoundsException;
+    T remove(int index) throws IndexOutOfBoundsException; // Trevor Method #5
 
 }

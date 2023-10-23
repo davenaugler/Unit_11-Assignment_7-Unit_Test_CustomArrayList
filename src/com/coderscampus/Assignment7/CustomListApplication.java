@@ -13,14 +13,14 @@ public class CustomListApplication {
 		System.out.println("getSize: " + myCustomList.getSize());
 		System.out.println("get: " + myCustomList.get(0));
 		System.out.println("--------");
+
 		// then you should validate that all the elements you've inserted actually exist
 		// in your data structure
 		for (int i = 0; i < myCustomList.getSize(); i++) {
 			System.out.println(myCustomList.get(i));
 		}
-		
-//		myCustomList.remove();
-//		System.out.println( + " was removed");
+		System.out.println("Removed item: " + myCustomList.remove(5));
+		System.out.println("getSize: " + myCustomList.getSize());
 
 	}
 

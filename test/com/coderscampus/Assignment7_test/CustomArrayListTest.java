@@ -8,6 +8,8 @@ import com.coderscampus.Assignment7.CustomArrayList;
 import com.coderscampus.Assignment7.CustomList;
 
 class CustomArrayListTest {
+	// sut = System Under Test
+
 
 	@Test
 	void should_add_one_item_to_list() {
@@ -50,6 +52,11 @@ class CustomArrayListTest {
 		}
 		assertEquals(21, sut.getSize());
 //		System.out.println("Test getSize: " + sut.getSize());
+	}
+	
+	@Test
+	void should_ReturnSize100( ) {
+		
 	}
 	
 	
