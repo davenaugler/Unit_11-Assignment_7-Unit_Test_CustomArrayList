@@ -24,9 +24,6 @@ public interface CustomList<T> {
      * @throws IndexOutOfBoundsException
      */
     boolean add (int index, T item) throws IndexOutOfBoundsException; // Trevor Method #2
-	
-	
-	
 	/**
 	 * This method should return the size of the <code>CustomList</code>
 	 * based on the number of actual elements stored inside of the <code>CustomList</code>

@@ -2,7 +2,7 @@ package com.coderscampus.Assignment7;
 
 import java.util.Arrays;
 
-public abstract class CustomArrayList<T> implements CustomList<T> {
+public class CustomArrayList<T> implements CustomList<T> {
 	private int initialCapacity = 10;
 	private Object[] items;
 	private int size;
@@ -12,18 +12,18 @@ public abstract class CustomArrayList<T> implements CustomList<T> {
 		size = 0;
 	}
 
-//	@Override
-//	public boolean add(T item) {
-//		checkCapacity(size + 1);
-//		items[size++] = item;
-//		// Test Comment: should_add_11_items_to_list()
-////		System.out.println(item);
-//		return true;
-//	}
+	@Override
+	public boolean add(T item) { // Trevor Method #1
+		checkCapacity(size + 1);
+		items[size++] = item;
+		// Test Comment: should_add_11_items_to_list()
+//		System.out.println(item);
+		return true;
+	}
 
 	// Revised add method
 	@Override
-	public boolean add(int index, T item) throws IndexOutOfBoundsException {
+	public boolean add(int index, T item) throws IndexOutOfBoundsException { // Trevor Method #2
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
 		}
@@ -34,7 +34,7 @@ public abstract class CustomArrayList<T> implements CustomList<T> {
 		return true;
 	}
 
-	private void checkCapacity(int minCapacity) {
+	private void checkCapacity(int minCapacity) { // Dave Method #1
 		int oldCapacity = items.length;
 		if (minCapacity > oldCapacity) {
 			int newCapacity = oldCapacity * 2;
@@ -44,28 +44,23 @@ public abstract class CustomArrayList<T> implements CustomList<T> {
 	}
 
 	@Override
-	public int getSize() {
+	public int getSize() { // Trevor Method #3
 		return size;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T get(int index) {
+	public T get(int index) { // Trevor Method #4
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
 		}
 		return (T) items[index];
 	}
 
-	
-//	@Override
-//	public boolean add(int index, T item) throws IndexOutOfBoundsException {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
+
 
 	@Override
-	public T remove(int index) throws IndexOutOfBoundsException {
+	public T remove(int index) throws IndexOutOfBoundsException { // Trevor Method #5
 		// Step 1: Check bounds
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);

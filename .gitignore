@@ -7,4 +7,5 @@ lib*
 .classpath
 .DS_Store
 .project
+
 /bin/
