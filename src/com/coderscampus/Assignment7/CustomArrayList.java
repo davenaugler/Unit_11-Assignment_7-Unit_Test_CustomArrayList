@@ -56,8 +56,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 		return (T) items[index];
 	}
-
-
+	
 
 	@Override
 	public T remove(int index) throws IndexOutOfBoundsException { // Trevor Method #5
