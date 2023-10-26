@@ -3,43 +3,41 @@ package com.coderscampus.Assignment7;
 import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
-	private int initialCapacity = 10;
+	private static final int INITIAL_CAPACITY = 10;
+	private static final int CAPACITY_MULTIPLIER = 2;
 	private Object[] items;
 	private int size;
 
 	public CustomArrayList() {
-		items = new Object[initialCapacity];
+		items = new Object[INITIAL_CAPACITY];
 		size = 0;
 	}
 
 	@Override
 	public boolean add(T item) { // Trevor Method #1
-		checkCapacity(size + 1);
+		ensureCapacity(size + 1);
 		items[size++] = item;
 		// Test Comment: should_add_11_items_to_list()
 //		System.out.println(item);
 		return true;
 	}
 
-	// Revised add method
 	@Override
-	public boolean add(int index, T item) throws IndexOutOfBoundsException { // Trevor Method #2
-		if (index < 0 || index >= size) {
-			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-		}
-		checkCapacity(size + 1);
-		items[size++] = item;
-		// Test Comment: should_add_11_items_to_list()
-//		System.out.println(item);
+	public boolean add(int index, T item) { // Trevor Method #2
+		validateIndexForAddition(index);
+		ensureCapacity(size + 1);
+		System.arraycopy(items, index, items, index + 1, size - index); // Replaces original for-loop
+		items[index] = item;
+		size++;
 		return true;
 	}
 
-	private void checkCapacity(int minCapacity) { // Dave Method #1
-		int oldCapacity = items.length;
-		if (minCapacity > oldCapacity) {
-			int newCapacity = oldCapacity * 2;
+
+	private void ensureCapacity(int minCapacity) { // Dave Method #1
+		if (minCapacity > items.length) {
+			int newCapacity = items.length * CAPACITY_MULTIPLIER;
 			items = Arrays.copyOf(items, newCapacity);
-			System.out.println("New Capacity: " + newCapacity);
+//			System.out.println("New Capacity: " + newCapacity);
 		}
 	}
 
@@ -51,36 +49,43 @@ public class CustomArrayList<T> implements CustomList<T> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public T get(int index) { // Trevor Method #4
-		if (index < 0 || index >= size) {
-			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-		}
+		validateIndexForAccess(index);
 		return (T) items[index];
 	}
-	
 
 	@Override
-	public T remove(int index) throws IndexOutOfBoundsException { // Trevor Method #5
-		// Step 1: Check bounds
+	public T remove(int index) { // Trevor Method #5
+		validateIndexForAccess(index);
+		T removedItem = (T) items[index];
+		System.arraycopy(items, index + 1, items, index, size - index - 1); // Replaces original for-loop
+		items[--size] = null;
+		return removedItem;
+	}
+
+	private void validateIndexForAccess(int index) {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
 		}
-		// Step 2: Save the item to return
-		T removedItem = (T) items[index];
+	}
 
-		// Step 3: Shift elements
-		for (int i = index; i < size - 1; i++) {
-			items[i] = items[i + 1];
+	private void validateIndexForAddition(int index) {
+		if (index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
 		}
+	}
 
-		// Set the last element to null to allow garbage collection of the removed element
-		items[size - 1] = null;
-
-		// Step 4: Decrease size
-		size--;
-
-		// Step 5: Return the removed item
-		return removedItem;
-
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		for (int i = 0; i < size; i++) {
+			sb.append(items[i]);
+			if (i < size - 1) {
+				sb.append(", ");
+			}
+		}
+		sb.append("]");
+		return sb.toString();
 	}
 
 }
