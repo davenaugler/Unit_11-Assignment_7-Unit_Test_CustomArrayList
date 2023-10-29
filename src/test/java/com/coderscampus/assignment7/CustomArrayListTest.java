@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class CustomArrayListDiffblueTest {
+class CustomArrayListTest {
     /**
      * Method under test: {@link CustomArrayList#toString()}
      */
