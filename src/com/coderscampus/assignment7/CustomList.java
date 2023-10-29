@@ -1,4 +1,4 @@
-package com.coderscampus.Assignment7;
+package com.coderscampus.assignment7;
 
 public interface CustomList<T> {
 	
@@ -13,17 +13,22 @@ public interface CustomList<T> {
 	 */
 	boolean add (T item); // Trevor Method #1
 	
-	  /**
-     * This method should add a new item into the <code>CustomList</code> at the
-     * specified index (thus shuffling the other items to the right). If the index doesn't
-     * yet exist, then you should throw an <code>IndexOutOfBoundsException</code>.
-     * @param index the spot in the zero-based array where you'd like to insert your
-     *        new item
-     * @param item the item that will be inserted into the <code>CustomList</code>
-     * @return <code>true</code> when the item is added
-     * @throws IndexOutOfBoundsException
-     */
-    boolean add (int index, T item) throws IndexOutOfBoundsException; // Trevor Method #2
+// --Commented out by Inspection START (10/27/23, 12:07 PM):
+//	  /**
+//     * This method should add a new item into the <code>CustomList</code> at the
+//     * specified index (thus shuffling the other items to the right). If the index doesn't
+//     * yet exist, then you should throw an <code>IndexOutOfBoundsException</code>.
+//     * @param index the spot in the zero-based array where you'd like to insert your
+//     *        new item
+//     * @param item the item that will be inserted into the <code>CustomList</code>
+//     * @return <code>true</code> when the item is added
+//     * @throws IndexOutOfBoundsException
+//     */
+//    boolean add (int index, T item) throws IndexOutOfBoundsException; // Trevor Method #2
+// --Commented out by Inspection STOP (10/27/23, 12:07 PM)
+
+	boolean add(int index, T item);
+
 	/**
 	 * This method should return the size of the <code>CustomList</code>
 	 * based on the number of actual elements stored inside of the <code>CustomList</code>

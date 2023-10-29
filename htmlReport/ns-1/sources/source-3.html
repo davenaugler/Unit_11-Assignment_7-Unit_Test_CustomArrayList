@@ -1,0 +1,126 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > CustomList</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.coderscampus.assignment7</a>
+</div>
+
+<h1>Coverage Summary for Class: CustomList (com.coderscampus.assignment7)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">CustomList</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.coderscampus.assignment7;
+&nbsp;
+&nbsp;public interface CustomList&lt;T&gt; {
+&nbsp;	
+&nbsp;	/**
+&nbsp;	 * This method should add a new item into the &lt;code&gt;CustomList&lt;/code&gt; and should
+&nbsp;	 * return &lt;code&gt;true&lt;/code&gt; if it was successfully able to insert an item.
+&nbsp;	 * @param item the item to be added to the &lt;code&gt;CustomList&lt;/code&gt;
+&nbsp;	 * @return &lt;code&gt;true&lt;/code&gt; if item was successfully added, &lt;code&gt;false&lt;/code&gt; if 
+&nbsp;	 * the item was not successfully added (note: it should always be able to add an 
+&nbsp;	 * item to the list) 
+&nbsp;	 *
+&nbsp;	 */
+&nbsp;	boolean add (T item); // Trevor Method #1
+&nbsp;	
+&nbsp;// --Commented out by Inspection START (10/27/23, 12:07 PM):
+&nbsp;//	  /**
+&nbsp;//     * This method should add a new item into the &lt;code&gt;CustomList&lt;/code&gt; at the
+&nbsp;//     * specified index (thus shuffling the other items to the right). If the index doesn&#39;t
+&nbsp;//     * yet exist, then you should throw an &lt;code&gt;IndexOutOfBoundsException&lt;/code&gt;.
+&nbsp;//     * @param index the spot in the zero-based array where you&#39;d like to insert your
+&nbsp;//     *        new item
+&nbsp;//     * @param item the item that will be inserted into the &lt;code&gt;CustomList&lt;/code&gt;
+&nbsp;//     * @return &lt;code&gt;true&lt;/code&gt; when the item is added
+&nbsp;//     * @throws IndexOutOfBoundsException
+&nbsp;//     */
+&nbsp;//    boolean add (int index, T item) throws IndexOutOfBoundsException; // Trevor Method #2
+&nbsp;// --Commented out by Inspection STOP (10/27/23, 12:07 PM)
+&nbsp;
+&nbsp;	boolean add(int index, T item);
+&nbsp;
+&nbsp;	/**
+&nbsp;	 * This method should return the size of the &lt;code&gt;CustomList&lt;/code&gt;
+&nbsp;	 * based on the number of actual elements stored inside of the &lt;code&gt;CustomList&lt;/code&gt;
+&nbsp;	 * @return an &lt;code&gt;int&lt;/code&gt; representing the number of elements stored in the &lt;code&gt;CustomList&lt;/code&gt;
+&nbsp;	 */
+&nbsp;	int getSize(); // Trevor Method #3
+&nbsp;	
+&nbsp;	/**
+&nbsp;     * This method will return the actual element from the &lt;code&gt;CustomList&lt;/code&gt; based on the
+&nbsp;     * index that is passed in.
+&nbsp;     * @param index represents the position in the backing &lt;code&gt;Object&lt;/code&gt; array that we want to access
+&nbsp;     * @return The element that is stored inside of the &lt;code&gt;CustomList&lt;/code&gt; at the given index
+&nbsp;     * @throws IndexOutOfBoundsException
+&nbsp;     */
+&nbsp;    T get(int index) throws IndexOutOfBoundsException; // Trevor Method #4
+&nbsp;	
+&nbsp;    /**
+&nbsp;     * This method should remove an item from the &lt;code&gt;CustomList&lt;/code&gt; at the
+&nbsp;     * specified index. This will NOT leave an empty &lt;code&gt;null&lt;/code&gt; where the item
+&nbsp;     * was removed, instead all other items to the right will be shuffled to the left.
+&nbsp;     * @param index the index of the item to remove
+&nbsp;     * @return the actual item that was removed from the list
+&nbsp;     * @throws IndexOutOfBoundsException
+&nbsp;     */
+&nbsp;    T remove(int index) throws IndexOutOfBoundsException; // Trevor Method #5
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-10-27 12:26</div>
+</div>
+</body>
+</html>
