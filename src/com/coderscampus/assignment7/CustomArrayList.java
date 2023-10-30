@@ -14,51 +14,37 @@ public class CustomArrayList<T> implements CustomList<T> {
     }
 
     @Override
-    public boolean add(T item) { // Trevor Method #1
-        System.out.println("---------------------");
-        System.out.println("ran 'add(T item)' method");
+    public boolean add(T item) {
         ensureCapacity(size + 1);
         items[size++] = item;
-        System.out.println("Added " + item + " to list");
-        // Test Comment: should_add_11_items_to_list()
-//		System.out.println(item);
         return true;
     }
 
     @Override
-    public boolean add(int index, T item) { // Trevor Method #2
-        System.out.println("ran 'add(int index, T item)' method ");
+    public boolean add(int index, T item) {
         validateIndexForAdditionalItem(index);
         ensureCapacity(size + 1);
-        System.arraycopy(items, index, items, index + 1, size - index); // Replaces original for-loop
+        System.arraycopy(items, index, items, index + 1, size - index);
         items[index] = item;
         size++;
         return true;
     }
 
-    private void ensureCapacity(int minCapacity) { // Dave Method #1
-        System.out.println("ran ensureCapacity method");
+    private void ensureCapacity(int minCapacity) {
         if (minCapacity > items.length) {
-            System.out.println("Need to increase capacity. minCapacity " + minCapacity);
             int newCapacity = items.length * CAPACITY_MULTIPLIER;
             items = Arrays.copyOf(items, newCapacity);
-            System.out.println("Increased Capacity to: " + newCapacity);
-        } else {
-            // Remove else post testing
-            System.out.println("Don't need to increase capacity. minCapacity " + minCapacity);
         }
     }
 
     @Override
-    public int getSize() { // Trevor Method #3
-        System.out.println("ran 'getSize()' method");
+    public int getSize() {
         return size;
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public T get(int index) { // Trevor Method #4
-        System.out.println("ran 'get(int index)' method");
+    public T get(int index) {
         validateIndexForAccess(index);
         return (T) items[index];
     }
@@ -66,23 +52,20 @@ public class CustomArrayList<T> implements CustomList<T> {
     @SuppressWarnings("unchecked")
     @Override
     public T remove(int index) { // Trevor Method #5
-        System.out.println("ran 'remove(int index)' method");
         validateIndexForAccess(index);
         T removedItem = (T) items[index];
-        System.arraycopy(items, index + 1, items, index, size - index - 1); // Replaces original for-loop
+        System.arraycopy(items, index + 1, items, index, size - index - 1);
         items[--size] = null;
         return removedItem;
     }
 
     private void validateIndexForAccess(int index) {
-        System.out.println("ran 'validateIndexForAccess(int index)' method");
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
     }
 
     private void validateIndexForAdditionalItem(int index) {
-        System.out.println("ran 'validateIndexForAdditionalItem(int index)' method");
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
@@ -90,7 +73,6 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @Override
     public String toString() {
-        System.out.println("ran 'toString()' method");
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         for (int i = 0; i < size; i++) {
