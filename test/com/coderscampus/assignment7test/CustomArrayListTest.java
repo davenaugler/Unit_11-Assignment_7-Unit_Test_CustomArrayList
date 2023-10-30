@@ -42,7 +42,7 @@ class CustomArrayListTest {
     }
 
     @Test
-    public void testEnsureCapacity() {
+    public void should_ensure_correct_capacity() {
         for (int i = 0; i < 11; i++) {
             sut.add(i, i);
         }
