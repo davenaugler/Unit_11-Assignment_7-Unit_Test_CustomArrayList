@@ -9,7 +9,7 @@ import com.coderscampus.assignment7.CustomArrayList;
 
 class CustomArrayListTest {
     // sut = System under test
-    private CustomArrayList<Integer> sut;
+    private CustomArrayList<Object> sut;
 
     @BeforeEach
     void setUp() {
