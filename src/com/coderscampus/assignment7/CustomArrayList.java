@@ -51,7 +51,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public T remove(int index) { // Trevor Method #5
+    public T remove(int index) {
         validateIndexForAccess(index);
         T removedItem = (T) items[index];
         System.arraycopy(items, index + 1, items, index, size - index - 1);

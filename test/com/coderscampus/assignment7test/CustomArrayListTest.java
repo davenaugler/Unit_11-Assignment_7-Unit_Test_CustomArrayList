@@ -96,8 +96,8 @@ class CustomArrayListTest {
         sut.add(5);
         sut.add(10);
         sut.add(15);
-        assertEquals(10, sut.remove(1)); // Removed 10 from index 1
-        assertEquals(2, sut.getSize()); // Size should return 2
+        assertEquals(10, sut.remove(1));
+        assertEquals(2, sut.getSize());
     }
 
     @Test
