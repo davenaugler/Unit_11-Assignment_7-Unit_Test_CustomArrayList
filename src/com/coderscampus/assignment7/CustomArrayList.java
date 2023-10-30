@@ -35,7 +35,7 @@ public class CustomArrayList<T> implements CustomList<T> {
         size++;
         return true;
     }
-    
+
     private void ensureCapacity(int minCapacity) { // Dave Method #1
         System.out.println("ran ensureCapacity method");
         if (minCapacity > items.length) {
