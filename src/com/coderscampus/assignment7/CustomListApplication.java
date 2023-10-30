@@ -32,8 +32,8 @@ public class CustomListApplication {
 
     private static void testAddAtSpecificIndex(CustomList<Object> list) {
         System.out.println("--------");
-        list.add(40, 42);
-        System.out.println("Added 42 at index 40.");
+        list.add(40, "Dave");
+        System.out.println("Added 'Dave' at index 40.");
         list.add(41);
         System.out.println("Added 41 to end of list.");
         System.out.println("Size of list: " + list.getSize() + " | " + " LIST: " + list);

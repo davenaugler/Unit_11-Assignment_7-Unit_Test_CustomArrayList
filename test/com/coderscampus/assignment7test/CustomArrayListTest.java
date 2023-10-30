@@ -17,14 +17,14 @@ class CustomArrayListTest {
     }
 
     @Test
-    void should_add_single_item_to_list_using_ints() {
+    void should_add_single_item_to_list_using_int() {
         assertTrue(sut.add(10));
         assertEquals(1, sut.getSize());
         assertEquals(10, sut.get(0));
     }
 
     @Test
-    void should_add_single_item_to_list_using_strings() {
+    void should_add_single_item_to_list_using_string() {
         assertTrue(sut.add("item 1"));
         assertEquals(1, sut.getSize());
         assertEquals("item 1", sut.get(0));
@@ -38,29 +38,6 @@ class CustomArrayListTest {
         assertEquals(15, sut.getSize());
         assertEquals(14, sut.get(14));
     }
-
-//    @Test
-//    void should_add_multiple_items_to_list_ints_and_strings() {
-//        sut.add("item 1");
-//        sut.add(1);
-//        sut.add("milk");
-//        sut.add(100);
-//        sut.add("steak");
-//        sut.add("apples");
-//        sut.add("John");
-//        sut.add(50);
-//
-//
-////        for (int i = 0; i < 15; i++) {
-////            sut.add(i);
-////        }
-//        assertEquals(1, sut.getSize());
-//        assertEquals(2, sut.get);
-//
-//
-//        assertEquals(15, sut.getSize());
-//        assertEquals(14, sut.get(14));
-//    }
 
     @Test
     void should_increase_internal_array_size() {
